@@ -1,0 +1,18 @@
+RewriteEngine On
+
+# Force HTTPS and www canonical host
+RewriteCond %{HTTPS} !=on [OR]
+RewriteCond %{HTTP_HOST} !^www\.softsitesolution\.in$ [NC]
+RewriteRule ^ https://www.softsitesolution.in%{REQUEST_URI} [R=301,L]
+
+# Normalize accidental trailing slash on HTML files (e.g. /about.html/)
+RewriteRule ^(.+)\.html/$ /$1.html [R=301,L,NC]
+
+# Redirect extensionless page URLs to existing HTML files
+RewriteRule ^(about|contact|projects|services)/?$ /$1.html [R=301,L,NC]
+
+# Redirect index.html to homepage (avoid duplicate URL)
+RewriteRule ^index\.html$ / [R=301,L]
+
+# Redirect legacy /home URL to homepage
+RewriteRule ^home/?$ / [R=301,L,NC]

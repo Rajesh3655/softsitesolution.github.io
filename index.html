@@ -1,0 +1,964 @@
+<!DOCTYPE html>
+<html lang="en-IN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SoftSiteSolutions | Web Development & Final Year Projects in India</title>
+    <meta name="description" content="Web development services in India for final year students, startups, and small businesses. Get project development, source code, documentation, and deployment support.">
+    <meta name="keywords" content="final year project development, web development services, business website development, full stack web developer, source code, documentation, viva support">
+    <meta name="robots" content="index,follow">
+    <meta name="author" content="SoftSiteSolutions">
+    <meta name="theme-color" content="#4f46e5">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="dns-prefetch" href="https://cdn.jsdelivr.net">
+    <link rel="dns-prefetch" href="https://cdnjs.cloudflare.com">
+    <link rel="dns-prefetch" href="https://www.googletagmanager.com">
+    <link rel="dns-prefetch" href="https://pagead2.googlesyndication.com">
+    <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
+    <link rel="preconnect" href="https://www.googletagmanager.com">
+    <link rel="preconnect" href="https://pagead2.googlesyndication.com">
+    <link rel="icon" href="/favicon.ico" sizes="any">
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml" sizes="any">
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png" sizes="180x180">
+    <link rel="manifest" href="/site.webmanifest">
+    <link rel="canonical" href="https://www.softsitesolution.in/">
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="SoftSiteSolutions">
+    <meta property="og:title" content="SoftSiteSolutions | Web Development & Final Year Projects in India">
+    <meta property="og:description" content="Web development services in India for final year students, startups, and small businesses. Get project development, source code, documentation, and deployment support.">
+    <meta property="og:url" content="https://www.softsitesolution.in/">
+    <meta property="og:image" content="https://www.softsitesolution.in/assets/images/projects/softsitesolution.png">
+    <meta property="og:image:alt" content="SoftSiteSolutions website preview">
+    <meta property="og:locale" content="en_IN">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="SoftSiteSolutions | Web Development & Final Year Projects in India">
+    <meta name="twitter:description" content="Web development services in India for final year students, startups, and small businesses. Get project development, source code, documentation, and deployment support.">
+    <meta name="twitter:image" content="https://www.softsitesolution.in/assets/images/projects/softsitesolution.png">
+    <meta name="twitter:image:alt" content="SoftSiteSolutions website preview">
+
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap"></noscript>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"></noscript>
+    <!-- EmailJS SDK -->
+    <script defer src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+    <!-- Ads/Analytics scripts are loaded after initial paint for faster mobile speed. -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#4f46e5',
+                        'primary-dark': '#4338ca',
+                        accent: '#10b981',
+                        'accent-dark': '#0d9668',
+                    },
+                    fontFamily: {
+                        'inter': ['Inter', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        * {
+            font-family: 'Inter', sans-serif;
+        }
+        .hero-bg {
+            background: linear-gradient(135deg, #f8fafc 0%, #e0f2fe 100%);
+        }
+        .card-hover {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .card-hover:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+        }
+        .corner-ribbon {
+            position: absolute;
+            top: 14px;
+            right: -38px;
+            transform: rotate(45deg);
+            background: linear-gradient(135deg, #22c55e 0%, #16a34a 100%);
+            color: white;
+            padding: 6px 48px;
+            font-weight: 700;
+            font-size: 0.75rem;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            box-shadow: 0 8px 18px -8px rgba(22, 163, 74, 0.8);
+        }
+        .floating-whatsapp {
+            animation: float 3s ease-in-out infinite;
+        }
+        @keyframes float {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-10px); }
+            100% { transform: translateY(0px); }
+        }
+        .toast {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            padding: 1rem 1.5rem;
+            border-radius: 0.5rem;
+            color: white;
+            font-weight: 500;
+            z-index: 9999;
+            transform: translateX(150%);
+            transition: transform 0.3s ease-in-out;
+            box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1);
+        }
+        .toast.show {
+            transform: translateX(0);
+        }
+        .toast.success {
+            background-color: #10b981;
+        }
+        .toast.error {
+            background-color: #ef4444;
+        }
+        .toast.info {
+            background-color: #3b82f6;
+        }
+        .form-loading {
+            position: relative;
+            pointer-events: none;
+            opacity: 0.7;
+        }
+        .form-loading::after {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 20px;
+            height: 20px;
+            border: 2px solid #f3f3f3;
+            border-top: 2px solid #4f46e5;
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+        }
+        @keyframes spin {
+            0% { transform: translate(-50%, -50%) rotate(0deg); }
+            100% { transform: translate(-50%, -50%) rotate(360deg); }
+        }
+    </style>
+    <!-- Google tag (gtag.js) is loaded later in the page -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@graph": [
+            {
+                "@type": "Organization",
+                "@id": "https://www.softsitesolution.in/#organization",
+                "name": "SoftSiteSolutions",
+                "url": "https://www.softsitesolution.in/",
+                "logo": "https://www.softsitesolution.in/favicon.svg",
+                "email": "softsitesolutions@gmail.com",
+                "telephone": "+91-82173-54109",
+                "contactPoint": [
+                    {
+                        "@type": "ContactPoint",
+                        "telephone": "+91-82173-54109",
+                        "contactType": "customer service",
+                        "areaServed": "IN",
+                        "availableLanguage": ["en"]
+                    }
+                ]
+            },
+            {
+                "@type": "WebSite",
+                "@id": "https://www.softsitesolution.in/#website",
+                "name": "SoftSiteSolutions",
+                "url": "https://www.softsitesolution.in/",
+                "publisher": { "@id": "https://www.softsitesolution.in/#organization" },
+                "inLanguage": "en-IN"
+            },
+            {
+                "@type": "FAQPage",
+                "@id": "https://www.softsitesolution.in/#faq",
+                "mainEntity": [
+                    {
+                        "@type": "Question",
+                        "name": "Do you provide final year project documentation and viva support?",
+                        "acceptedAnswer": {
+                            "@type": "Answer",
+                            "text": "Yes. We provide source code, documentation, PPT, and viva guidance based on your project requirements."
+                        }
+                    },
+                    {
+                        "@type": "Question",
+                        "name": "What technologies do you use?",
+                        "acceptedAnswer": {
+                            "@type": "Answer",
+                            "text": "We build with modern web stacks based on scope, including HTML/CSS/JavaScript, PHP/MySQL, and full-stack frameworks."
+                        }
+                    },
+                    {
+                        "@type": "Question",
+                        "name": "How long does a typical project take?",
+                        "acceptedAnswer": {
+                            "@type": "Answer",
+                            "text": "Timelines depend on scope. We confirm a delivery plan after reviewing your requirements."
+                        }
+                    },
+                    {
+                        "@type": "Question",
+                        "name": "Do you help with hosting and domain setup?",
+                        "acceptedAnswer": {
+                            "@type": "Answer",
+                            "text": "Yes. We assist with hosting, SSL setup, and deployment so your site goes live smoothly."
+                        }
+                    },
+                    {
+                        "@type": "Question",
+                        "name": "How do I get a quote?",
+                        "acceptedAnswer": {
+                            "@type": "Answer",
+                            "text": "Share your requirements through our contact form or WhatsApp, and we will send a detailed quote."
+                        }
+                    }
+                ]
+            }
+        ]
+    }
+    </script>
+</head>
+<body class="font-inter text-gray-800">
+    <!-- Toast Notification -->
+    <div id="toast" class="toast hidden">
+        <div class="flex items-center">
+            <span id="toast-message"></span>
+            <button id="toast-close" class="ml-4 text-white hover:text-gray-200">
+                <i class="fas fa-times"></i>
+            </button>
+        </div>
+    </div>
+
+    <!-- Floating WhatsApp Button -->
+    <a href="https://wa.me/8217354109?text=Hi%20SoftSiteSolutions,%20I'm%20interested%20in%20your%20services" 
+       target="_blank" 
+       class="fixed bottom-6 right-6 z-50 bg-green-500 text-white p-4 rounded-full shadow-lg floating-whatsapp hover:bg-green-600">
+        <i class="fab fa-whatsapp text-2xl"></i>
+    </a>
+
+    <!-- Navigation -->
+    <nav class="sticky top-0 z-40 bg-white shadow-md">
+        <div class="container mx-auto px-4 py-3 flex justify-between items-center">
+            <div class="flex items-center">
+                <div class="text-2xl font-bold text-primary" aria-label="SoftSiteSolutions">
+    <i class="fas fa-code text-accent mr-2"></i>SoftSite<span class="text-accent">Solutions</span>
+</div>
+            </div>
+            
+            <!-- Mobile menu button -->
+            <button id="menuBtn" class="md:hidden text-gray-700">
+                <i class="fas fa-bars text-2xl"></i>
+            </button>
+            
+            <!-- Desktop Menu -->
+            <div class="hidden md:flex space-x-8">
+                <a href="/#home" class="font-medium text-primary border-b-2 border-primary">Home</a>
+                <a href="/services.html" class="font-medium hover:text-primary">Services</a>
+                <a href="/projects.html" class="font-medium hover:text-primary">Projects</a>
+                <a href="/about.html" class="font-medium hover:text-primary">About</a>
+                <a href="/contact.html" class="font-medium hover:text-primary">Contact</a>
+            </div>
+        </div>
+        
+        <!-- Mobile Menu -->
+        <div id="mobileMenu" class="hidden md:hidden bg-white px-4 py-3 shadow-lg">
+            <a href="#home" class="block py-2 text-primary font-semibold">Home</a>
+            <a href="/services.html" class="block py-2 hover:text-primary">Services</a>
+            <a href="/projects.html" class="block py-2 hover:text-primary">Projects</a>
+            <a href="/about.html" class="block py-2 hover:text-primary">About</a>
+            <a href="/contact.html" class="block py-2 hover:text-primary">Contact</a>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero-bg py-16 md:py-24">
+        <div class="container mx-auto px-4">
+            <div class="flex flex-col md:flex-row items-center">
+                <div class="md:w-1/2 mb-12 md:mb-0">
+                    <h1 class="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
+                        Professional Web Development Services for <span class="text-primary">Students</span> & <span class="text-accent">Businesses</span>
+                    </h1>
+                    <p class="text-xl text-gray-600 mb-8">
+                        Get your final year project developed with complete source code, documentation, and viva support. Or get a professional website for your business to grow online. Serving students and small businesses across India.
+                    </p>
+                    <div class="flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-4">
+                        <a href="#contact" class="bg-primary text-white px-8 py-3 rounded-lg font-semibold text-center hover:bg-primary-dark transition duration-300">
+                            <i class="fas fa-laptop-code mr-2"></i>Get Your Project Done
+                        </a>
+                        <a href="https://wa.me/8217354109?text=Hi%20SoftSiteSolutions,%20I'm%20interested%20in%20your%20services" 
+                           target="_blank" 
+                           class="bg-accent text-white px-8 py-3 rounded-lg font-semibold text-center hover:bg-accent-dark transition duration-300">
+                            <i class="fab fa-whatsapp mr-2"></i>WhatsApp Now
+                        </a>
+                        <a href="/services.html" class="bg-gray-900 text-white px-8 py-3 rounded-lg font-semibold text-center hover:bg-black transition duration-300">
+                            <i class="fas fa-list-check mr-2"></i>View Services
+                        </a>
+                    </div>
+                </div>
+                <div class="md:w-1/2 flex justify-center">
+                    <div class="relative">
+                        <div class="w-64 h-64 md:w-80 md:h-80 bg-primary rounded-full opacity-10"></div>
+                        <div class="absolute top-0 left-0 w-64 h-64 md:w-80 md:h-80 flex items-center justify-center">
+                            <i class="fas fa-code text-9xl text-primary opacity-50"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="py-16 bg-gray-50">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Our Core Services</h2>
+                <p class="text-gray-600 max-w-2xl mx-auto">Professional web development solutions tailored for students and businesses</p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <!-- Service 1 -->
+                <div class="bg-white p-6 rounded-xl shadow-md card-hover">
+                    <div class="text-primary text-4xl mb-4">
+                        <i class="fas fa-graduation-cap"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">Final Year Project Development</h3>
+                    <p class="text-gray-600 mb-4">Complete project development for engineering and computer science students with source code, documentation, and viva support.</p>
+                    <ul class="text-gray-600 space-y-1">
+                        <li><i class="fas fa-check text-accent mr-2"></i>Source Code</li>
+                        <li><i class="fas fa-check text-accent mr-2"></i>Documentation & PPT</li>
+                        <li><i class="fas fa-check text-accent mr-2"></i>Viva Support</li>
+                        <li><i class="fas fa-check text-accent mr-2"></i>Project Report</li>
+                    </ul>
+                </div>
+                
+                <!-- Service 2 -->
+                <div class="bg-white p-6 rounded-xl shadow-md card-hover">
+                    <div class="text-primary text-4xl mb-4">
+                        <i class="fas fa-briefcase"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">Business Website Development</h3>
+                    <p class="text-gray-600 mb-4">Professional websites for local businesses, startups, and organizations to establish online presence and attract customers.</p>
+                    <ul class="text-gray-600 space-y-1">
+                        <li><i class="fas fa-check text-accent mr-2"></i>Company Websites</li>
+                        <li><i class="fas fa-check text-accent mr-2"></i>Gym & Fitness Websites</li>
+                        <li><i class="fas fa-check text-accent mr-2"></i>Landing Pages</li>
+                        <li><i class="fas fa-check text-accent mr-2"></i>Responsive Design</li>
+                    </ul>
+                </div>
+                
+                <!-- Service 3 -->
+                <div class="bg-white p-6 rounded-xl shadow-md card-hover">
+                    <div class="text-primary text-4xl mb-4">
+                        <i class="fas fa-layer-group"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">Full-Stack Web Applications</h3>
+                    <p class="text-gray-600 mb-4">Custom web applications with admin panels, user authentication, database integration, and advanced functionality.</p>
+                    <ul class="text-gray-600 space-y-1">
+                        <li><i class="fas fa-check text-accent mr-2"></i>Admin Panels</li>
+                        <li><i class="fas fa-check text-accent mr-2"></i>Login & Authentication</li>
+                        <li><i class="fas fa-check text-accent mr-2"></i>Database-Driven Apps</li>
+                        <li><i class="fas fa-check text-accent mr-2"></i>Custom Features</li>
+                    </ul>
+                </div>
+                
+                <!-- Service 4 -->
+                <div class="bg-white p-6 rounded-xl shadow-md card-hover">
+                    <div class="text-primary text-4xl mb-4">
+                        <i class="fas fa-server"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">Deployment & Hosting Support</h3>
+                    <p class="text-gray-600 mb-4">Complete deployment and hosting assistance to get your website or application live on the internet.</p>
+                    <ul class="text-gray-600 space-y-1">
+                        <li><i class="fas fa-check text-accent mr-2"></i>Hostinger Setup</li>
+                        <li><i class="fas fa-check text-accent mr-2"></i>Netlify / Render Deployment</li>
+                        <li><i class="fas fa-check text-accent mr-2"></i>SSL Configuration</li>
+                        <li><i class="fas fa-check text-accent mr-2"></i>Domain Setup</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why Choose Us -->
+    <section class="py-16 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Why Choose SoftSiteSolutions</h2>
+                <p class="text-gray-600 max-w-2xl mx-auto">We provide reliable, affordable, and professional web development services</p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="text-center p-6">
+                    <div class="bg-primary bg-opacity-10 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <i class="fas fa-handshake text-3xl text-primary"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">Trust & Reliability</h3>
+                    <p class="text-gray-600">We deliver projects on time with complete transparency and regular updates.</p>
+                </div>
+                
+                <div class="text-center p-6">
+                    <div class="bg-primary bg-opacity-10 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <i class="fas fa-headset text-3xl text-primary"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">24/7 Support</h3>
+                    <p class="text-gray-600">Get round-the-clock support for your project queries and technical assistance.</p>
+                </div>
+                
+                <div class="text-center p-6">
+                    <div class="bg-primary bg-opacity-10 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <i class="fas fa-rupee-sign text-3xl text-primary"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">Affordable Pricing</h3>
+                    <p class="text-gray-600">Student-friendly pricing with flexible payment options and package deals.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Preview -->
+    <section id="portfolio" class="py-16 bg-gray-50">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Featured Projects</h2>
+                <p class="text-gray-600 max-w-2xl mx-auto">A quick look at recent college and business work</p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Project 1 -->
+                <div class="bg-white rounded-2xl shadow-md overflow-hidden card-hover relative">
+                    <a href="https://powerfitgyms.netlify.app/" target="_blank" rel="noopener noreferrer" aria-label="Open PowerFlex Gym live site">
+                        <img src="assets/images/projects/gym.png" alt="PowerFlex Gym website homepage" width="1200" height="800" class="h-48 w-full object-cover" loading="lazy" decoding="async" fetchpriority="low">
+                    </a>
+                    <div class="p-6">
+                        <div class="text-xs uppercase tracking-wide text-gray-500 mb-2">Business Website</div>
+                        <span class="corner-ribbon">New</span>
+                        <h3 class="text-xl font-bold mb-2">PowerFlex Gym</h3>
+                        <p class="text-gray-600 mb-4">A premium fitness website with membership plans, classes, and modern gym branding.</p>
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span class="bg-gray-100 text-gray-800 px-3 py-1 rounded-full text-sm">HTML</span>
+                            <span class="bg-gray-100 text-gray-800 px-3 py-1 rounded-full text-sm">CSS</span>
+                            <span class="bg-gray-100 text-gray-800 px-3 py-1 rounded-full text-sm">JavaScript</span>
+                        
+                            <span class="bg-gray-100 text-gray-800 px-3 py-1 rounded-full text-sm">More+</span></div>
+                        <a href="https://powerfitgyms.netlify.app/" target="_blank" rel="noopener noreferrer" class="text-primary font-medium hover:text-primary-dark">View Live →</a>
+                    </div>
+                </div>
+
+                <!-- Project 2 -->
+                <div class="bg-white rounded-2xl shadow-md overflow-hidden card-hover relative">
+                    <a href="https://www.softsitesolution.in/" target="_blank" rel="noopener noreferrer" aria-label="Open SoftSiteSolutions live site">
+                        <img src="assets/images/projects/softsitesolution.png" alt="SoftSiteSolutions website homepage" width="1200" height="800" class="h-48 w-full object-cover" loading="lazy" decoding="async" fetchpriority="low">
+                    </a>
+                    <div class="p-6">
+                        <div class="text-xs uppercase tracking-wide text-gray-500 mb-2">
+                            Business Website
+                        </div>
+                        <span class="corner-ribbon">New</span>
+                        <h3 class="text-xl font-bold mb-2">SoftSiteSolutions</h3>
+                        <p class="text-gray-600 mb-4">Services, portfolio, and contact focused on converting visitors.</p>
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span class="bg-gray-100 text-gray-800 px-3 py-1 rounded-full text-sm">HTML</span>
+                            <span class="bg-gray-100 text-gray-800 px-3 py-1 rounded-full text-sm">CSS</span>
+                            <span class="bg-gray-100 text-gray-800 px-3 py-1 rounded-full text-sm">JavaScript</span>
+                        
+                            <span class="bg-gray-100 text-gray-800 px-3 py-1 rounded-full text-sm">More+</span></div>
+                        <a href="https://www.softsitesolution.in/" target="_blank" rel="noopener noreferrer" class="text-primary font-medium hover:text-primary-dark">View Live →</a>
+                    </div>
+                </div>
+                
+                <!-- Project 3 -->
+                <div class="bg-white rounded-2xl shadow-md overflow-hidden card-hover relative">
+                    <a href="https://vishwasjwellers.netlify.app/" target="_blank" rel="noopener noreferrer" aria-label="Open Vishwas Jewellers live site">
+                        <img src="assets/images/projects/vishwas.png" alt="Vishwas Jewellers website homepage" width="1200" height="800" class="h-48 w-full object-cover" loading="lazy" decoding="async" fetchpriority="low">
+                    </a>
+                    <div class="p-6">
+                        <div class="text-xs uppercase tracking-wide text-gray-500 mb-2">Business Website</div>
+                        <span class="corner-ribbon">New</span>
+                        <h3 class="text-xl font-bold mb-2">Vishwas Jewellers</h3>
+                        <p class="text-gray-600 mb-4">Jewelry collections, offers, and store highlights in a clean layout.</p>
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span class="bg-gray-100 text-gray-800 px-3 py-1 rounded-full text-sm">HTML</span>
+                            <span class="bg-gray-100 text-gray-800 px-3 py-1 rounded-full text-sm">CSS</span>
+                            <span class="bg-gray-100 text-gray-800 px-3 py-1 rounded-full text-sm">JavaScript</span>
+                        
+                            <span class="bg-gray-100 text-gray-800 px-3 py-1 rounded-full text-sm">More+</span></div>
+                        <a href="https://vishwasjwellers.netlify.app/" target="_blank" rel="noopener noreferrer" class="text-primary font-medium hover:text-primary-dark">View Live →</a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="text-center mt-12">
+                <a href="/projects.html" class="inline-block bg-primary text-white px-8 py-3 rounded-lg font-semibold hover:bg-primary-dark transition duration-300">
+                    <i class="fas fa-images mr-2"></i>View All Projects
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-16 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="flex flex-col md:flex-row items-center">
+                <div class="md:w-1/2 mb-12 md:mb-0">
+                    <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-6">About SoftSiteSolutions</h2>
+                    <p class="text-gray-600 mb-6">
+                        We are a professional web development service specializing in creating projects for final year students and businesses. With years of experience in delivering high-quality, SEO-optimized websites and applications, we help students achieve academic success and businesses grow online.
+                    </p>
+                    <p class="text-gray-600 mb-8">
+                        Our team consists of experienced developers who understand the specific requirements of academic projects and business websites. We focus on clean code, proper documentation, and timely delivery to ensure complete satisfaction.
+                    </p>
+                    <div class="grid grid-cols-2 gap-4">
+                        <div class="flex items-center">
+                            <i class="fas fa-check-circle text-accent text-xl mr-3"></i>
+                            <span class="font-medium">100+ Projects Completed</span>
+                        </div>
+                        <div class="flex items-center">
+                            <i class="fas fa-check-circle text-accent text-xl mr-3"></i>
+                            <span class="font-medium">24/7 Support</span>
+                        </div>
+                        <div class="flex items-center">
+                            <i class="fas fa-check-circle text-accent text-xl mr-3"></i>
+                            <span class="font-medium">On-Time Delivery</span>
+                        </div>
+                        <div class="flex items-center">
+                            <i class="fas fa-check-circle text-accent text-xl mr-3"></i>
+                            <span class="font-medium">Source Code Included</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="md:w-1/2 md:pl-12">
+                    <div class="bg-gray-50 p-8 rounded-xl shadow-md">
+                        <h3 class="text-2xl font-bold mb-6 text-center">Our Expertise</h3>
+                        <div class="space-y-6">
+                            <div>
+                                <div class="flex justify-between mb-1">
+                                    <span class="font-medium">Frontend Development</span>
+                                    <span class="font-medium">95%</span>
+                                </div>
+                                <div class="w-full bg-gray-200 rounded-full h-2.5">
+                                    <div class="bg-primary h-2.5 rounded-full" style="width: 95%"></div>
+                                </div>
+                            </div>
+                            <div>
+                                <div class="flex justify-between mb-1">
+                                    <span class="font-medium">Backend Development</span>
+                                    <span class="font-medium">90%</span>
+                                </div>
+                                <div class="w-full bg-gray-200 rounded-full h-2.5">
+                                    <div class="bg-primary h-2.5 rounded-full" style="width: 90%"></div>
+                                </div>
+                            </div>
+                            <div>
+                                <div class="flex justify-between mb-1">
+                                    <span class="font-medium">Database Design</span>
+                                    <span class="font-medium">88%</span>
+                                </div>
+                                <div class="w-full bg-gray-200 rounded-full h-2.5">
+                                    <div class="bg-primary h-2.5 rounded-full" style="width: 88%"></div>
+                                </div>
+                            </div>
+                            <div>
+                                <div class="flex justify-between mb-1">
+                                    <span class="font-medium">Deployment & Hosting</span>
+                                    <span class="font-medium">92%</span>
+                                </div>
+                                <div class="w-full bg-gray-200 rounded-full h-2.5">
+                                    <div class="bg-primary h-2.5 rounded-full" style="width: 92%"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="faq" class="py-16 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Frequently Asked Questions</h2>
+                <p class="text-gray-600 max-w-2xl mx-auto">Quick answers about our final year projects, business websites, and delivery process.</p>
+            </div>
+
+            <div class="max-w-4xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div class="bg-gray-50 p-6 rounded-xl shadow-sm">
+                    <h3 class="text-lg font-bold mb-2">Do you provide documentation and viva support?</h3>
+                    <p class="text-gray-600">Yes. We include source code, documentation, PPT, and viva guidance based on your project requirements.</p>
+                </div>
+                <div class="bg-gray-50 p-6 rounded-xl shadow-sm">
+                    <h3 class="text-lg font-bold mb-2">Which technologies do you use?</h3>
+                    <p class="text-gray-600">We work with modern stacks including HTML/CSS/JavaScript, PHP/MySQL, and full-stack frameworks.</p>
+                </div>
+                <div class="bg-gray-50 p-6 rounded-xl shadow-sm">
+                    <h3 class="text-lg font-bold mb-2">How long does a project take?</h3>
+                    <p class="text-gray-600">Timelines depend on scope. We confirm delivery once we review your requirements.</p>
+                </div>
+                <div class="bg-gray-50 p-6 rounded-xl shadow-sm">
+                    <h3 class="text-lg font-bold mb-2">Do you help with hosting and domain setup?</h3>
+                    <p class="text-gray-600">Yes. We assist with hosting, SSL setup, and deployment.</p>
+                </div>
+                <div class="bg-gray-50 p-6 rounded-xl shadow-sm">
+                    <h3 class="text-lg font-bold mb-2">How can I get a quote?</h3>
+                    <p class="text-gray-600">Use the contact form or WhatsApp to share your requirements and we will send a detailed quote.</p>
+                </div>
+                <div class="bg-gray-50 p-6 rounded-xl shadow-sm">
+                    <h3 class="text-lg font-bold mb-2">Do you work with businesses too?</h3>
+                    <p class="text-gray-600">Absolutely. We build professional websites and web apps for startups and small businesses in India.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Local SEO Section -->
+    <section id="service-areas" class="py-16 bg-gray-50">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Web Development Services Across India</h2>
+                <p class="text-gray-600 max-w-2xl mx-auto">We work remotely with students and small businesses across India, delivering final year projects and professional websites.</p>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 max-w-5xl mx-auto">
+                <div class="bg-white p-6 rounded-xl shadow-sm">
+                    <h3 class="text-xl font-bold mb-3">What We Deliver</h3>
+                    <ul class="text-gray-600 space-y-2">
+                        <li><i class="fas fa-check text-accent mr-2"></i>Final year project development with source code</li>
+                        <li><i class="fas fa-check text-accent mr-2"></i>Documentation, PPT, and viva support</li>
+                        <li><i class="fas fa-check text-accent mr-2"></i>Business websites and landing pages</li>
+                        <li><i class="fas fa-check text-accent mr-2"></i>Custom web applications with admin panels</li>
+                        <li><i class="fas fa-check text-accent mr-2"></i>Deployment, hosting, and SSL setup</li>
+                    </ul>
+                </div>
+                <div class="bg-white p-6 rounded-xl shadow-sm">
+                    <h3 class="text-xl font-bold mb-3">Google Business Profile Checklist</h3>
+                    <p class="text-gray-600 mb-4">If you have a local business, complete these to rank faster in Maps and local results:</p>
+                    <ul class="text-gray-600 space-y-2">
+                        <li><i class="fas fa-check text-accent mr-2"></i>Verify your business and add accurate category</li>
+                        <li><i class="fas fa-check text-accent mr-2"></i>Add services, working hours, and website link</li>
+                        <li><i class="fas fa-check text-accent mr-2"></i>Upload real photos and logo</li>
+                        <li><i class="fas fa-check text-accent mr-2"></i>Collect reviews from real customers</li>
+                        <li><i class="fas fa-check text-accent mr-2"></i>Post updates at least once per week</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-16 bg-gray-50">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Get In Touch</h2>
+                <p class="text-gray-600 max-w-2xl mx-auto">Contact us for project inquiries, quotes, or any questions about our services</p>
+            </div>
+            
+            <div class="flex flex-col lg:flex-row gap-8">
+                <div class="lg:w-1/2">
+                    <div class="bg-white p-8 rounded-xl shadow-md">
+                        <h3 class="text-2xl font-bold mb-6">Send us a Message</h3>
+                        <form id="contactForm" class="space-y-6">
+                            <div>
+                                <label for="name" class="block text-gray-700 mb-2">Your Name *</label>
+                                <input type="text" id="name" name="from_name" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent" placeholder="John Doe" required>
+                            </div>
+                            <div>
+                                <label for="email" class="block text-gray-700 mb-2">Email Address *</label>
+                                <input type="email" id="email" name="from_email" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent" placeholder="john@example.com" required>
+                            </div>
+                            <div>
+                                <label for="phone" class="block text-gray-700 mb-2">Phone Number (Optional)</label>
+                                <input type="tel" id="phone" name="phone" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent" placeholder="+91 98765 43210">
+                            </div>
+                            <div>
+                                <label for="service" class="block text-gray-700 mb-2">Service Interested In</label>
+                                <select id="service" name="service" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent">
+                                    <option value="">Select a service</option>
+                                    <option value="final-year-project">Final Year Project Development</option>
+                                    <option value="business-website">Business Website Development</option>
+                                    <option value="web-application">Full-Stack Web Application</option>
+                                    <option value="deployment">Deployment & Hosting Support</option>
+                                    <option value="other">Other</option>
+                                </select>
+                            </div>
+                            <div>
+                                <label for="message" class="block text-gray-700 mb-2">Your Message *</label>
+                                <textarea id="message" name="message" rows="5" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent" placeholder="Describe your project requirements or questions..." required></textarea>
+                            </div>
+                            <button type="submit" id="submitBtn" class="w-full bg-primary text-white px-6 py-3 rounded-lg font-semibold hover:bg-primary-dark transition duration-300">
+                                <span id="btnText">Send Message</span>
+                                <span id="btnLoader" class="hidden">
+                                    <i class="fas fa-spinner fa-spin mr-2"></i>Sending...
+                                </span>
+                            </button>
+                        </form>
+                    </div>
+                </div>
+                
+                <div class="lg:w-1/2">
+                    <div class="bg-white p-8 rounded-xl shadow-md h-full">
+                        <h3 class="text-2xl font-bold mb-6">Contact Information</h3>
+                        <p class="text-gray-600 mb-8">Reach out to us through any of the following channels. We typically respond within a few hours.</p>
+                        
+                        <div class="space-y-6">
+                            <div class="flex items-start">
+                                <div class="bg-primary bg-opacity-10 p-3 rounded-lg mr-4">
+                                    <i class="fas fa-envelope text-primary text-xl"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-bold text-lg">Email Us</h4>
+                                    <p class="text-gray-600">softsitesolutions@gmail.com</p>
+                                    <p class="text-gray-500 text-sm">For project inquiries and support</p>
+                                </div>
+                            </div>
+                            
+                            <div class="flex items-start">
+                                <div class="bg-primary bg-opacity-10 p-3 rounded-lg mr-4">
+                                    <i class="fab fa-whatsapp text-primary text-xl"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-bold text-lg">WhatsApp</h4>
+                                    <p class="text-gray-600">+91 82173 54109</p>
+                                    <p class="text-gray-500 text-sm">Quick response for urgent queries</p>
+                                </div>
+                            </div>
+                            
+                            <div class="flex items-start">
+                                <div class="bg-primary bg-opacity-10 p-3 rounded-lg mr-4">
+                                    <i class="fas fa-clock text-primary text-xl"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-bold text-lg">Working Hours</h4>
+                                    <p class="text-gray-600">Monday - Sunday: 9 AM - 10 PM</p>
+                                    <p class="text-gray-500 text-sm">Support available on Sundays for urgent projects</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="mt-10 p-6 bg-gradient-to-r from-primary to-accent rounded-xl text-white">
+                            <h4 class="text-xl font-bold mb-3">Ready to Start Your Project?</h4>
+                            <p class="mb-4">Contact us today for a free consultation and quote for your project requirements.</p>
+                            <a href="https://wa.me/8217354109?text=Hi%20SoftSiteSolutions,%20I'm%20interested%20in%20your%20services" 
+                               target="_blank" 
+                               class="inline-block bg-white text-primary px-6 py-3 rounded-lg font-semibold hover:bg-gray-100 transition duration-300">
+                                <i class="fab fa-whatsapp mr-2"></i>Chat on WhatsApp Now
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white py-12">
+        <div class="container mx-auto px-4">
+            <div class="flex flex-col md:flex-row justify-between items-center">
+                <div class="mb-8 md:mb-0">
+                    <h2 class="text-2xl font-bold mb-2">
+                        <i class="fas fa-code text-accent mr-2"></i>SoftSite<span class="text-accent">Solutions</span>
+                    </h2>
+                    <p class="text-gray-400">Professional Web Development Services</p>
+                    <p class="text-gray-400 mt-2">For Students & Businesses</p>
+                </div>
+                
+                <div class="mb-8 md:mb-0">
+                    <h3 class="text-xl font-bold mb-4">Quick Links</h3>
+                    <div class="flex flex-col space-y-2">
+                        <a href="/" class="text-white font-semibold">Home</a>
+                        <a href="/services.html" class="text-gray-400 hover:text-white">Services</a>
+                        <a href="/projects.html" class="text-gray-400 hover:text-white">Projects</a>
+                        <a href="/about.html" class="text-gray-400 hover:text-white">About</a>
+                        <a href="/contact.html" class="text-gray-400 hover:text-white">Contact</a>
+                    </div>
+                </div>
+                
+                <div>
+                    <h3 class="text-xl font-bold mb-4">Connect With Us</h3>
+                    <div class="flex space-x-4">
+                        <a href="#" class="bg-gray-800 p-3 rounded-full hover:bg-primary transition duration-300">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                        <a href="#" class="bg-gray-800 p-3 rounded-full hover:bg-primary transition duration-300">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                        <a href="#" class="bg-gray-800 p-3 rounded-full hover:bg-primary transition duration-300">
+                            <i class="fab fa-linkedin-in"></i>
+                        </a>
+                        <a href="https://www.instagram.com/softsitesolutions?igsh=dnVqMmc5bXN5dXdi" target="_blank" rel="noopener noreferrer" class="bg-gray-800 p-3 rounded-full hover:bg-primary transition duration-300">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="border-t border-gray-800 mt-8 pt-8 text-center text-gray-400">
+                <p>&copy; <span id="currentYear"></span> SoftSiteSolutions. All rights reserved.</p>
+                <p class="mt-2">Designed with <i class="fas fa-heart text-red-500"></i> for students and businesses</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // EmailJS Configuration
+        const EMAILJS_SERVICE_ID = 'service_ID'; 
+        const EMAILJS_TEMPLATE_ID = 'template_qzjnwsp'; 
+        const EMAILJS_PUBLIC_KEY = 'k5ubOqKiKKdsPPOtL'; 
+
+        // Mobile menu toggle
+        document.getElementById('menuBtn').addEventListener('click', function() {
+            const mobileMenu = document.getElementById('mobileMenu');
+            mobileMenu.classList.toggle('hidden');
+        });
+        
+        // Set current year in footer
+        document.getElementById('currentYear').textContent = new Date().getFullYear();
+        
+        // Toast notification functions
+        function showToast(message, type = 'success') {
+            const toast = document.getElementById('toast');
+            const toastMessage = document.getElementById('toast-message');
+            
+            toastMessage.textContent = message;
+            toast.className = `toast ${type} show`;
+            
+            // Auto-hide after 5 seconds
+            setTimeout(() => {
+                hideToast();
+            }, 5000);
+        }
+        
+        function hideToast() {
+            const toast = document.getElementById('toast');
+            toast.classList.remove('show');
+        }
+        
+        document.getElementById('toast-close').addEventListener('click', hideToast);
+        
+        // Form submission with EmailJS
+        document.getElementById('contactForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // Get form elements
+            const submitBtn = document.getElementById('submitBtn');
+            const btnText = document.getElementById('btnText');
+            const btnLoader = document.getElementById('btnLoader');
+            
+            // Show loading state
+            btnText.classList.add('hidden');
+            btnLoader.classList.remove('hidden');
+            submitBtn.classList.add('form-loading');
+            submitBtn.disabled = true;
+            
+            // Prepare template parameters
+            const templateParams = {
+                from_name: document.getElementById('name').value,
+                from_email: document.getElementById('email').value,
+                phone: document.getElementById('phone').value || 'Not provided',
+                service: document.getElementById('service').value || 'Not specified',
+                message: document.getElementById('message').value,
+                to_email: 'softsitesolutions@gmail.com',
+                date: new Date().toLocaleString()
+            };
+            
+            // Send email using EmailJS
+            emailjs.send(EMAILJS_SERVICE_ID, EMAILJS_TEMPLATE_ID, templateParams, EMAILJS_PUBLIC_KEY)
+                .then(function(response) {
+                    console.log('Email sent successfully!', response.status, response.text);
+                    
+                    // Show success message
+                    showToast('Message sent successfully! We will contact you soon.', 'success');
+                    
+                    // Reset form
+                    document.getElementById('contactForm').reset();
+                    
+                    // Scroll to contact section
+                    document.getElementById('contact').scrollIntoView({ behavior: 'smooth' });
+                })
+                .catch(function(error) {
+                    console.error('Email sending failed:', error);
+                    
+                    // Show error message
+                    showToast('Failed to send message. Please try again or contact us directly.', 'error');
+                })
+                .finally(function() {
+                    // Reset button state
+                    btnText.classList.remove('hidden');
+                    btnLoader.classList.add('hidden');
+                    submitBtn.classList.remove('form-loading');
+                    submitBtn.disabled = false;
+                });
+        });
+        
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                
+                const targetId = this.getAttribute('href');
+                if(targetId === '#') return;
+                
+                const targetElement = document.querySelector(targetId);
+                if(targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 80,
+                        behavior: 'smooth'
+                    });
+                    
+                    // Close mobile menu if open
+                    const mobileMenu = document.getElementById('mobileMenu');
+                    mobileMenu.classList.add('hidden');
+                }
+            });
+        });
+
+        // Initialize EmailJS
+        (function() {
+            // Check if EmailJS is initialized
+            if (typeof emailjs !== 'undefined') {
+                emailjs.init(EMAILJS_PUBLIC_KEY);
+                console.log('EmailJS initialized');
+            } else {
+                console.error('EmailJS SDK not loaded');
+            }
+        })();
+    </script>
+    <script>
+        // Defer heavy third-party scripts until after first paint to improve mobile speed.
+        const loadDeferredScripts = () => {
+            // Google Ads
+            const ads = document.createElement('script');
+            ads.async = true;
+            ads.src = "https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2919350397675296";
+            ads.crossOrigin = "anonymous";
+            document.head.appendChild(ads);
+
+            // Google Analytics (gtag)
+            const gtagScript = document.createElement('script');
+            gtagScript.async = true;
+            gtagScript.src = "https://www.googletagmanager.com/gtag/js?id=G-VTZJZ6SYRD";
+            document.head.appendChild(gtagScript);
+
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', 'G-VTZJZ6SYRD');
+        };
+
+        if ('requestIdleCallback' in window) {
+            requestIdleCallback(loadDeferredScripts, { timeout: 2500 });
+        } else {
+            window.addEventListener('load', loadDeferredScripts);
+        }
+    </script>
+</body>
+</html>
