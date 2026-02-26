@@ -67,6 +67,18 @@
         * {
             font-family: 'Inter', sans-serif;
         }
+        a:focus-visible, button:focus-visible, input:focus-visible, select:focus-visible, textarea:focus-visible {
+            outline: 3px solid #4f46e5;
+            outline-offset: 2px;
+        }
+        @media (prefers-reduced-motion: reduce) {
+            *, *::before, *::after {
+                animation-duration: 0.01ms !important;
+                animation-iteration-count: 1 !important;
+                transition-duration: 0.01ms !important;
+                scroll-behavior: auto !important;
+            }
+        }
         .hero-bg {
             background: linear-gradient(135deg, #f8fafc 0%, #e0f2fe 100%);
         }
@@ -256,7 +268,7 @@
             </div>
             
             <!-- Mobile menu button -->
-            <button id="menuBtn" class="md:hidden text-gray-700">
+            <button id="menuBtn" class="md:hidden text-gray-700" aria-label="Toggle mobile menu" aria-controls="mobileMenu" aria-expanded="false">
                 <i class="fas fa-bars text-2xl"></i>
             </button>
             
@@ -271,7 +283,7 @@
         </div>
         
         <!-- Mobile Menu -->
-        <div id="mobileMenu" class="hidden md:hidden bg-white px-4 py-3 shadow-lg">
+        <div id="mobileMenu" class="hidden md:hidden bg-white px-4 py-3 shadow-lg" aria-hidden="true">
             <a href="#home" class="block py-2 text-primary font-semibold">Home</a>
             <a href="/services.html" class="block py-2 hover:text-primary">Services</a>
             <a href="/projects.html" class="block py-2 hover:text-primary">Projects</a>
@@ -816,9 +828,13 @@
         const EMAILJS_PUBLIC_KEY = 'k5ubOqKiKKdsPPOtL'; 
 
         // Mobile menu toggle
-        document.getElementById('menuBtn').addEventListener('click', function() {
-            const mobileMenu = document.getElementById('mobileMenu');
-            mobileMenu.classList.toggle('hidden');
+        const menuBtn = document.getElementById('menuBtn');
+        const mobileMenu = document.getElementById('mobileMenu');
+
+        menuBtn.addEventListener('click', function() {
+            const isHidden = mobileMenu.classList.toggle('hidden');
+            menuBtn.setAttribute('aria-expanded', String(!isHidden));
+            mobileMenu.setAttribute('aria-hidden', String(isHidden));
         });
         
         // Set current year in footer
@@ -916,8 +932,9 @@
                     });
                     
                     // Close mobile menu if open
-                    const mobileMenu = document.getElementById('mobileMenu');
                     mobileMenu.classList.add('hidden');
+                    menuBtn.setAttribute('aria-expanded', 'false');
+                    mobileMenu.setAttribute('aria-hidden', 'true');
                 }
             });
         });

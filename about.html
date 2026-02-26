@@ -37,9 +37,11 @@
     <meta name="twitter:description" content="Meet SoftSiteSolutions, a web development team in India helping students and businesses with final year projects, business websites, and custom web solutions.">
     <meta name="twitter:image" content="https://www.softsitesolution.in/assets/images/projects/softsitesolution.png">
     <meta name="twitter:image:alt" content="SoftSiteSolutions website preview">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap"></noscript>
     <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"></noscript>
     <!-- EmailJS SDK -->
     <script defer src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
     <script>
@@ -109,20 +111,22 @@
         ]
     }
     </script>
-   <!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-VTZJZ6SYRD"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'G-VTZJZ6SYRD');
-</script>
-<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2919350397675296"
-     crossorigin="anonymous"></script>
-    <style>
+    <!-- Third-party analytics and ads are deferred to reduce initial render blocking. -->
+<style>
         * {
             font-family: 'Inter', sans-serif;
+        }
+        a:focus-visible, button:focus-visible, input:focus-visible, select:focus-visible, textarea:focus-visible {
+            outline: 3px solid #4f46e5;
+            outline-offset: 2px;
+        }
+        @media (prefers-reduced-motion: reduce) {
+            *, *::before, *::after {
+                animation-duration: 0.01ms !important;
+                animation-iteration-count: 1 !important;
+                transition-duration: 0.01ms !important;
+                scroll-behavior: auto !important;
+            }
         }
         .hero-bg {
             background: linear-gradient(135deg, #f8fafc 0%, #e0f2fe 100%);
@@ -285,7 +289,7 @@
             </div>
             
             <!-- Mobile menu button -->
-            <button id="menuBtn" class="md:hidden text-gray-700">
+            <button id="menuBtn" class="md:hidden text-gray-700" aria-label="Toggle mobile menu" aria-controls="mobileMenu" aria-expanded="false">
                 <i class="fas fa-bars text-2xl"></i>
             </button>
             
@@ -300,7 +304,7 @@
         </div>
         
         <!-- Mobile Menu -->
-        <div id="mobileMenu" class="hidden md:hidden bg-white px-4 py-3 shadow-lg">
+        <div id="mobileMenu" class="hidden md:hidden bg-white px-4 py-3 shadow-lg" aria-hidden="true">
             <a href="/" class="block py-2 hover:text-primary">Home</a>
             <a href="services.html" class="block py-2 hover:text-primary">Services</a>
             <a href="projects.html" class="block py-2 hover:text-primary">Projects</a>
@@ -823,9 +827,13 @@
         const EMAILJS_PUBLIC_KEY = 'k5ubOqKiKKdsPPOtL';
 
         // Mobile menu toggle
-        document.getElementById('menuBtn').addEventListener('click', function() {
-            const mobileMenu = document.getElementById('mobileMenu');
-            mobileMenu.classList.toggle('hidden');
+        const menuBtn = document.getElementById('menuBtn');
+        const mobileMenu = document.getElementById('mobileMenu');
+
+        menuBtn.addEventListener('click', function() {
+            const isHidden = mobileMenu.classList.toggle('hidden');
+            menuBtn.setAttribute('aria-expanded', String(!isHidden));
+            mobileMenu.setAttribute('aria-hidden', String(isHidden));
         });
         
         // Set current year in footer
@@ -866,8 +874,9 @@
                         behavior: 'smooth'
                     });
                     
-                    const mobileMenu = document.getElementById('mobileMenu');
                     mobileMenu.classList.add('hidden');
+                    menuBtn.setAttribute('aria-expanded', 'false');
+                    mobileMenu.setAttribute('aria-hidden', 'true');
                 }
             });
         });
@@ -936,6 +945,32 @@
                 console.error('EmailJS SDK not loaded');
             }
         })();
+    </script>
+    <script>
+        // Defer heavy third-party scripts until after first paint.
+        const loadDeferredScripts = () => {
+            const ads = document.createElement('script');
+            ads.async = true;
+            ads.src = "https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2919350397675296";
+            ads.crossOrigin = "anonymous";
+            document.head.appendChild(ads);
+
+            const gtagScript = document.createElement('script');
+            gtagScript.async = true;
+            gtagScript.src = "https://www.googletagmanager.com/gtag/js?id=G-VTZJZ6SYRD";
+            document.head.appendChild(gtagScript);
+
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', 'G-VTZJZ6SYRD');
+        };
+
+        if ('requestIdleCallback' in window) {
+            requestIdleCallback(loadDeferredScripts, { timeout: 2500 });
+        } else {
+            window.addEventListener('load', loadDeferredScripts);
+        }
     </script>
 </body>
 </html>

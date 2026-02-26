@@ -1,6 +1,7 @@
 RewriteEngine On
 
 # Force HTTPS and www canonical host
+# Search Console tip: verify the https://www.softsitesolution.in/ property to avoid 'Page with redirect' reports on non-www URLs.
 RewriteCond %{HTTPS} !=on [OR]
 RewriteCond %{HTTP_HOST} !^www\.softsitesolution\.in$ [NC]
 RewriteRule ^ https://www.softsitesolution.in%{REQUEST_URI} [R=301,L]
