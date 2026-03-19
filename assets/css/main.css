@@ -534,6 +534,35 @@ button {
     padding: 24px;
 }
 
+.project-live {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 14px;
+    min-height: 34px;
+    padding: 6px 12px;
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    background: #ffffff;
+    color: var(--text);
+    font-size: 14px;
+    font-weight: 500;
+    transition: border-color var(--transition), color var(--transition), transform var(--transition);
+}
+
+.project-live:hover {
+    border-color: #cbd5e1;
+    color: var(--accent);
+    transform: translateY(-1px);
+}
+
+.project-live.is-disabled {
+    color: var(--text-soft);
+    border-color: var(--border);
+    background: #f8fafc;
+    pointer-events: none;
+}
+
 .filter-row button {
     display: inline-flex;
     align-items: center;
