@@ -164,14 +164,17 @@ button {
     width: 34px;
     height: 34px;
     border-radius: 8px;
-    background: #eff6ff;
-    border: 1px solid #bfdbfe;
+    background: #ffffff;
+    border: 1px solid #d1d9e6;
     color: var(--accent);
 }
 
 .brand-mark svg {
-    width: 16px;
-    height: 16px;
+    width: 18px;
+    height: 18px;
+    stroke-width: 2.3;
+    stroke-linecap: round;
+    stroke-linejoin: round;
 }
 
 .brand-text {
