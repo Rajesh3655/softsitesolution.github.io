@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>About — SoftSiteSolutions | Our Story, Mission & Skills</title>
+  <meta name="description" content="Learn about SoftSiteSolutions — a freelance web development agency in India with expertise in websites, web applications, and student project support." />
+  <meta name="keywords" content="about SoftSiteSolutions, freelance web developer India story, web development agency India" />
+  <meta property="og:title" content="About SoftSiteSolutions — Our Story & Mission" />
+  <meta property="og:description" content="Premium freelance web development agency built on a passion for clean code, modern design, and client success." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://softsitesolution.in/about.html" />
+  <link rel="canonical" href="https://softsitesolution.in/about.html" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="assets/css/style.css" />
+  <link rel="icon" href="favicon.ico" />
+  <style>
+    .timeline { position: relative; padding-left: 2.5rem; margin-top: 2rem; }
+    .timeline::before {
+      content:''; position: absolute; left: 10px; top: 0; bottom: 0; width: 2px;
+      background: linear-gradient(180deg, var(--clr-primary), var(--clr-secondary), transparent);
+    }
+    .timeline-item { position: relative; margin-bottom: 2rem; }
+    .timeline-dot {
+      position: absolute; left: -2.15rem; top: 0.3rem;
+      width: 14px; height: 14px; border-radius: 50%;
+      background: linear-gradient(135deg, var(--clr-primary), var(--clr-secondary));
+      box-shadow: 0 0 0 3px rgba(99,102,241,0.15);
+    }
+    .timeline-item h4 { font-size: 1rem; font-weight: 700; margin-bottom: 0.25rem; }
+    .timeline-item p { font-size: 0.88rem; color: var(--clr-text-muted); line-height: 1.65; }
+    .timeline-year { font-size: 0.75rem; font-weight: 700; color: var(--clr-primary); margin-bottom: 0.2rem; }
+    .skill-bar-wrap { margin-bottom: 1.25rem; }
+    .skill-bar-label { display: flex; justify-content: space-between; font-size: 0.85rem; font-weight: 600; margin-bottom: 0.4rem; }
+    .skill-bar-track { height: 6px; background: var(--clr-bg3); border-radius: 99px; overflow: hidden; }
+    .skill-bar-fill {
+      height: 100%; border-radius: 99px;
+      background: linear-gradient(90deg, var(--clr-primary), var(--clr-secondary));
+      transform-origin: left;
+      transform: scaleX(0);
+      transition: transform 1s cubic-bezier(0.4,0,0.2,1);
+    }
+    .skill-bar-fill.animate { transform: scaleX(1); }
+  </style>
+</head>
+<body>
+
+<!-- Loader -->
+<div id="page-loader">
+  <div class="loader-logo">
+    <img src="assets/projects/logo-trimmed.png" alt="SoftSiteSolutions logo" class="brand-mark" />
+  </div>
+  <div class="loader-bar"><div class="loader-bar-inner"></div></div>
+</div>
+
+<!-- Navbar -->
+<nav class="navbar">
+  <div class="nav-inner">
+    <a href="index.html" class="nav-logo" aria-label="SoftSiteSolutions Home">
+      <img src="assets/projects/logo-trimmed.png" alt="SoftSiteSolutions logo" class="brand-mark" />
+    </a>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="services.html">Services</a></li>
+      <li><a href="projects.html">Projects</a></li>
+      <li><a href="student.html">Students</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="contact.html" class="nav-cta">Contact Us</a></li>
+    </ul>
+    <button class="nav-hamburger" aria-label="Toggle menu"><span></span><span></span><span></span></button>
+  </div>
+</nav>
+<div class="mobile-menu" role="dialog" aria-modal="true" aria-label="Mobile navigation">
+  <div class="mobile-menu-shell">
+    <div class="mobile-menu-links">
+      <a href="index.html">Home</a>
+      <a href="services.html">Services</a>
+      <a href="projects.html">Projects</a>
+      <a href="student.html">Students</a>
+      <a href="about.html">About</a>
+      <a href="contact.html">Contact</a>
+    </div>
+  </div>
+</div>
+
+<main class="page-wrapper">
+
+  <!-- Page Header -->
+  <header class="page-header">
+    <div class="container">
+      <div class="section-label reveal">Our Story</div>
+      <h1 class="section-title reveal">Passion for <span class="highlight">Digital Excellence</span></h1>
+      <p class="section-subtitle reveal">SoftSiteSolutions was born from a simple belief: every business and student deserves access to high-quality web development at an honest price.</p>
+    </div>
+  </header>
+
+  <!-- About Story + Image -->
+  <section class="section">
+    <div class="container">
+      <div class="about-grid">
+        <div class="reveal-left">
+          <div class="about-img-wrap">
+            <div class="about-img-bg">💻</div>
+            <div class="about-badges">
+              <div class="about-badge">🚀 50+ Projects Delivered</div>
+              <div class="about-badge">⭐ 100% Client Satisfaction</div>
+              <div class="about-badge">🎓 20+ Students Helped</div>
+            </div>
+          </div>
+        </div>
+        <div class="reveal-right">
+          <div class="section-label">Who We Are</div>
+          <h2 class="section-title" style="font-size:clamp(1.6rem,3vw,2.2rem);">Building the <span class="highlight">Digital India</span> One Project at a Time</h2>
+          <p style="color:var(--clr-text-muted);line-height:1.8;margin-top:1.25rem;font-size:0.95rem;">
+            SoftSiteSolutions is a freelance web development agency based in India, specialising in creating stunning websites, powerful web applications, and providing comprehensive support for final year student projects.
+          </p>
+          <p style="color:var(--clr-text-muted);line-height:1.8;margin-top:1rem;font-size:0.95rem;">
+            We believe great design and clean code shouldn't be a luxury. Whether you're a small business looking to establish an online presence, a startup that needs a custom web app, or a student who needs project guidance — we're here to make it happen.
+          </p>
+          <div class="skills-wrap mt-3">
+            <span class="skill-tag">HTML/CSS/JS</span>
+            <span class="skill-tag">React</span>
+            <span class="skill-tag">Node.js</span>
+            <span class="skill-tag">Python</span>
+            <span class="skill-tag">PHP</span>
+            <span class="skill-tag">MySQL</span>
+            <span class="skill-tag">MongoDB</span>
+            <span class="skill-tag">REST APIs</span>
+            <span class="skill-tag">Git</span>
+            <span class="skill-tag">UI/UX Design</span>
+            <span class="skill-tag">SEO</span>
+            <span class="skill-tag">Figma</span>
+          </div>
+          <div style="display:flex;gap:0.75rem;margin-top:2rem;flex-wrap:wrap;">
+            <a href="projects.html" class="btn btn-primary">View Our Work</a>
+            <a href="contact.html" class="btn btn-outline">Get in Touch</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Skills -->
+  <section class="section parallax-section">
+    <div class="parallax-bg" aria-hidden="true"></div>
+    <div class="container parallax-content">
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:start;">
+        <div class="reveal-left">
+          <div class="section-label">Skills & Expertise</div>
+          <h2 class="section-title" style="font-size:clamp(1.6rem,3vw,2.2rem);">Technical <span class="highlight">Proficiency</span></h2>
+          <p style="color:var(--clr-text-muted);line-height:1.75;margin:1rem 0 2rem;font-size:0.92rem;">
+            Years of hands-on experience across frontend, backend, database, and deployment technologies.
+          </p>
+          <div id="skill-bars">
+            <div class="skill-bar-wrap">
+              <div class="skill-bar-label"><span>Frontend (HTML/CSS/JS)</span><span>95%</span></div>
+              <div class="skill-bar-track"><div class="skill-bar-fill" style="--w:0.95"></div></div>
+            </div>
+            <div class="skill-bar-wrap">
+              <div class="skill-bar-label"><span>React & Modern Frameworks</span><span>88%</span></div>
+              <div class="skill-bar-track"><div class="skill-bar-fill" style="--w:0.88"></div></div>
+            </div>
+            <div class="skill-bar-wrap">
+              <div class="skill-bar-label"><span>Node.js & Backend</span><span>82%</span></div>
+              <div class="skill-bar-track"><div class="skill-bar-fill" style="--w:0.82"></div></div>
+            </div>
+            <div class="skill-bar-wrap">
+              <div class="skill-bar-label"><span>Python / Django / Flask</span><span>80%</span></div>
+              <div class="skill-bar-track"><div class="skill-bar-fill" style="--w:0.80"></div></div>
+            </div>
+            <div class="skill-bar-wrap">
+              <div class="skill-bar-label"><span>Databases (MySQL, MongoDB)</span><span>85%</span></div>
+              <div class="skill-bar-track"><div class="skill-bar-fill" style="--w:0.85"></div></div>
+            </div>
+            <div class="skill-bar-wrap">
+              <div class="skill-bar-label"><span>UI/UX & Design Systems</span><span>90%</span></div>
+              <div class="skill-bar-track"><div class="skill-bar-fill" style="--w:0.90"></div></div>
+            </div>
+          </div>
+        </div>
+        <div class="reveal-right">
+          <div class="section-label" style="margin-bottom:1.25rem;">Our Journey</div>
+          <div class="timeline">
+            <div class="timeline-item">
+              <div class="timeline-dot"></div>
+              <div class="timeline-year">2021</div>
+              <h4>Foundation</h4>
+              <p>Started as a solo freelance developer helping local businesses build their first websites.</p>
+            </div>
+            <div class="timeline-item">
+              <div class="timeline-dot"></div>
+              <div class="timeline-year">2022</div>
+              <h4>Student Projects Begin</h4>
+              <p>Began supporting engineering students with final year projects — this became a core service.</p>
+            </div>
+            <div class="timeline-item">
+              <div class="timeline-dot"></div>
+              <div class="timeline-year">2023</div>
+              <h4>Agency Growth</h4>
+              <p>Expanded to custom web applications and served 30+ clients across business and education sectors.</p>
+            </div>
+            <div class="timeline-item">
+              <div class="timeline-dot"></div>
+              <div class="timeline-year">2024</div>
+              <h4>SoftSiteSolutions Brand</h4>
+              <p>Officially launched as SoftSiteSolutions — a premium, trusted brand for web development in India.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Mission & Vision -->
+  <section class="section">
+    <div class="container">
+      <div class="text-center reveal">
+        <div class="section-label">Our Values</div>
+        <h2 class="section-title">Mission & <span class="highlight">Vision</span></h2>
+      </div>
+      <div class="mission-grid">
+        <div class="mission-card reveal reveal-delay-1">
+          <h4>🎯 Our Mission</h4>
+          <p>To deliver premium-quality web development services that are accessible, honest, and impactful — helping businesses grow online and students succeed academically.</p>
+        </div>
+        <div class="mission-card reveal reveal-delay-2">
+          <h4>🔭 Our Vision</h4>
+          <p>To become the most trusted freelance digital partner in India — known for clean code, modern design, and client-first values.</p>
+        </div>
+        <div class="mission-card reveal reveal-delay-3">
+          <h4>💎 Quality First</h4>
+          <p>We never cut corners. Every project receives the same level of care, from a one-page site to a complex web application.</p>
+        </div>
+        <div class="mission-card reveal reveal-delay-4">
+          <h4>🤝 Long-Term Partnership</h4>
+          <p>We build relationships, not just websites. Most of our clients return for new projects — that's the trust we've earned.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="section-sm">
+    <div class="container">
+      <div class="cta-banner reveal">
+        <h2>Ready to Work With Us?</h2>
+        <p>Join 30+ satisfied clients and students who've trusted SoftSiteSolutions with their digital projects.</p>
+        <a href="contact.html" class="btn btn-ghost btn-lg">Start a Conversation</a>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <a href="index.html" class="footer-logo" aria-label="SoftSiteSolutions Home">
+          <img src="assets/projects/logo-trimmed.png" alt="SoftSiteSolutions logo" class="brand-mark" />
+        </a>
+        <p>Premium freelance web development agency helping businesses and students build powerful digital products.</p>
+      </div>
+      <div>
+        <h4>Quick Links</h4>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="services.html">Services</a></li>
+          <li><a href="projects.html">Projects</a></li>
+          <li><a href="student.html">Student Projects</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Contact</h4>
+        <ul>
+          <li><a href="mailto:softsitesolutions@gmail.com">softsitesolutions@gmail.com</a></li>
+          <li><a href="https://softsitesolution.in">softsitesolution.in</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2024 SoftSiteSolutions. All rights reserved.</span>
+      <span>Made with ❤️ in India</span>
+    </div>
+  </div>
+</footer>
+
+<button id="back-to-top" aria-label="Back to top">
+  <svg viewBox="0 0 24 24"><polyline points="18 15 12 9 6 15"/></svg>
+</button>
+<div id="toast-container" aria-live="polite"></div>
+<script src="assets/js/main.js"></script>
+<script>
+// Animate skill bars on scroll
+const skillBarsSection = document.getElementById('skill-bars');
+if (skillBarsSection) {
+  const obs = new IntersectionObserver((entries) => {
+    if (entries[0].isIntersecting) {
+      document.querySelectorAll('.skill-bar-fill').forEach((bar, i) => {
+        setTimeout(() => {
+          bar.style.width = (parseFloat(bar.style.getPropertyValue('--w') || 0.8) * 100) + '%';
+          bar.classList.add('animate');
+        }, i * 120);
+      });
+      obs.disconnect();
+    }
+  }, { threshold: 0.3 });
+  obs.observe(skillBarsSection);
+}
+</script>
+</body>
+</html>
